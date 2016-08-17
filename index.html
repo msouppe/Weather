@@ -22,7 +22,7 @@
      	$(document).ready(function() {	
             $("#driver").click(function(event){
 
-              // my APIKey = 4a6c9c294860afdf
+              // var firstKey = 4a6c9c294860afdf
               var otherKey = "86a17c63187fb2a5";
 
             	var yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/CA/San_Francisco.json";
@@ -45,7 +45,7 @@
 
                   // todayHigh = curr["forecast"]["simpleforecast"]["forecastday"][0]["high"]["fahrenheit"];
                   // todayLow = curr["forecast"]["simpleforecast"]["forecastday"][0]["high"]["fahrenheit"];
-
+ 
                   $('#yoyo').html('<p>Today\'s Date: ' + curr.forecast.simpleforecast.forecastday[0].date.pretty + '</p>');
                   // $('#yoyo').html('<p>Today\'s Low temperature: ' + todayLow + '&#x2109 </p>');
                   // $('#yoyo').append('<p>Today\'s High temperature:' + todayHigh + '&#x2109 </p>');

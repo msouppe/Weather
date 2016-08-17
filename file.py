@@ -1,10 +1,10 @@
 import json
 
-with open('sumthingparrt2.json') as file:
+with open('currWeather.json') as file:
     thing = json.load(file)
     file.close()
 
-with open('sumthing.json') as file:
+with open('prevWeather.json') as file:
     yestr = json.load(file)
     file.close()    
 
