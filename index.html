@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>testing 1234</title>
+  	
+  	<!-- Stylesheets -->
+
+
+  	<!-- Javascript Files -->
+
+
+  	<!-- JQuery Files -->
+  	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+
+  	<script>
+     	$(document).ready(function() {	
+            $("#driver").click(function(event){
+
+              // my APIKey = 4a6c9c294860afdf
+              var otherKey = "86a17c63187fb2a5";
+
+            	var yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/CA/San_Francisco.json";
+  				    var today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/CA/San_Francisco.json";
+              var yesterHigh, yesterLow, yesterMean, todayHigh, todayLow, todayMean, diffMean;
+
+               $.getJSON(yester_Weather, function(yester) {
+
+                  yesterHigh = yester["history"]["dailysummary"][0]["maxtempi"];
+                  yesterLow = yester.history.dailysummary[0].mintempi;
+                  yesterMean = yester.history.dailysummary[0].meantempi;
+
+                  $('#prevDay').html('<p>Yesterday\'s Date: ' + yester.history.date.pretty + '</p>');
+                  $('#prevDay').append('<p>Yesterday\'s Low temperature: ' + yesterLow + '&#x2109 </p>');
+                  $('#prevDay').append('<p>Yesterday\'s High temperature: ' + yesterHigh + '&#x2109 </p>');
+                  $('#prevDay').append('<p>Yesterday\'s Mean temperature: ' + yesterMean + '&#x2109 </p>');
+               });
+
+               $.getJSON(today_Weather, function(curr) {
+
+                  // todayHigh = curr["forecast"]["simpleforecast"]["forecastday"][0]["high"]["fahrenheit"];
+                  // todayLow = curr["forecast"]["simpleforecast"]["forecastday"][0]["high"]["fahrenheit"];
+
+                  $('#yoyo').html('<p>Today\'s Date: ' + curr.forecast.simpleforecast.forecastday[0].date.pretty + '</p>');
+                  // $('#yoyo').html('<p>Today\'s Low temperature: ' + todayLow + '&#x2109 </p>');
+                  // $('#yoyo').append('<p>Today\'s High temperature:' + todayHigh + '&#x2109 </p>');
+               });
+            });	
+         });
+  	</script>
+
+  <p>Testing </p><br>
+	<div id = "prevDay"></div>
+	<br><br>
+	<div id = "yoyo"></div>
+	<input type = "button" id = "driver" value = "Load Data" />
+
+  </body>
+</html>
