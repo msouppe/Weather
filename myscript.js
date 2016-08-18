@@ -2,7 +2,8 @@ $(document).ready(function() {
   var otherKey = "86a17c63187fb2a5";
   var yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/CA/San_Francisco.json";
   var today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/CA/San_Francisco.json";
-  var yesterHigh, yesterLow, yesterMean, currTemp;
+  var yesterHigh, yesterLow, currTemp;
+  yesterMean = "100";
 
   $("#driver").click(function(event){
 
@@ -11,7 +12,7 @@ $(document).ready(function() {
 
     // var yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/CA/San_Francisco.json";
     // var today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/CA/San_Francisco.json";
-    //     var yesterHigh, yesterLow, yesterMean, todayTemp, diffMean;
+    // var yesterHigh, yesterLow, yesterMean, currTemp;
 
     $.getJSON(yester_Weather, function(yester) {
       // debugger;
@@ -29,19 +30,20 @@ $(document).ready(function() {
 
       currTemp = curr.current_observation.temp_f;
       // debugger;
-      // $('#yoyo').html('<p>Today\'s Date: ' + curr.forecast.simpleforecast.forecastday[0].date.pretty + '</p>');
       $('#yoyo').html('<p>Today\'s temperature: ' + currTemp + '&#x2109 </p>');
-      // $('#yoyo').append('<p>Today\'s High temperature:' + todayHigh + '&#x2109 </p>');
+      
     });
 
     degreeDifference(yesterMean, currTemp);
-    debugger;
+    // debugger;
 
     });	
  });
 
 function degreeDifference(prevTemp, todayTemp){
+  debugger;
   var tempDiff = Number(todayTemp) - Number(prevTemp);
+  // debugger;
   if (tempDiff > 0) {
     $('#butt').html('<p>Today\'s temperature is ' + Math.abs(tempDiff).toString() + '&#x2109 </p>');
   } 
@@ -49,7 +51,7 @@ function degreeDifference(prevTemp, todayTemp){
     $('#butt').html('<p>Today\'s temperature: ' + tempDiff.toString() + '&#x2109 </p>');
   }
   else {
-    $('#butt').html('<p>Today\'s forecast is the same as yesterday\'s of ' + currTemp + '&#x2109 </p>');
+    $('#butt').html('<p>Today\'s forecast is the same as yesterday\'s of ' + todayTemp + '&#x2109 </p>');
   }
 }
 
