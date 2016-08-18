@@ -27,10 +27,10 @@
 
             	var yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/CA/San_Francisco.json";
   				    var today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/CA/San_Francisco.json";
-              var yesterHigh, yesterLow, yesterMean, todayHigh, todayLow, todayMean, diffMean;
+              var yesterHigh, yesterLow, yesterMean, todayTemp, diffMean;
 
                $.getJSON(yester_Weather, function(yester) {
-                  debugger;
+                  // debugger;
                   yesterHigh = yester["history"]["dailysummary"][0]["maxtempi"];
                   yesterLow = yester.history.dailysummary[0].mintempi;
                   yesterMean = yester.history.dailysummary[0].meantempi;
@@ -43,15 +43,29 @@
 
                $.getJSON(today_Weather, function(curr) {
 
-                  todayTemp = curr["current_observation"]["temp_f"];
+                  currTemp = curr["current_observation"]["temp_f"];
                   // todayLow = curr["forecast"]["simpleforecast"]["forecastday"][0]["high"]["fahrenheit"];
                   // debugger;
                   // $('#yoyo').html('<p>Today\'s Date: ' + curr.forecast.simpleforecast.forecastday[0].date.pretty + '</p>');
-                  $('#yoyo').html('<p>Today\'s temperature: ' + todayTemp + '&#x2109 </p>');
+                  $('#yoyo').html('<p>Today\'s temperature: ' + currTemp + '&#x2109 </p>');
                   // $('#yoyo').append('<p>Today\'s High temperature:' + todayHigh + '&#x2109 </p>');
                });
             });	
          });
+
+      function degreeDifference(prevTemp, todayTemp){
+        if (prevTemp > todayTemp) {
+          $('#yoyo').html('<p>Today\'s temperature: ' + currTemp + '&#x2109 </p>');
+        } 
+        else if (preTemp < todayTemp) {
+
+        }
+        else {
+          
+        }
+
+
+      }
   	</script>
 
   <p>Testing </p><br>
