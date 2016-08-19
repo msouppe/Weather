@@ -1,23 +1,22 @@
 // var firstKey = "4a6c9c294860afdf";
 var otherKey = "86a17c63187fb2a5";
+var zipcode;
 var yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/CA/San_Francisco.json";
 var today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/CA/San_Francisco.json";
+var placement = "http://api.wunderground.com/api/"+ otherKey +"/geolookup/q/" + zipcode + "94107.json";
 var yesterHigh, yesterLow, currTemp, yesterMean;
 
 $(document).ready(function() {
-  $("#driver").click(onDriverClick);	// click
-}); // doc
+  $("#driver").click(onDriverClick);
+});
 
 function degreeDifference(prevTemp, todayTemp){
-  // debugger;
-  var tempDiff = Number(todayTemp) - Number(prevTemp);
-  var roundAns = Math.floor(tempDiff);
-  // debugger;
-  if (roundAns > 0) {
-    $('#butt').html('<p>Today\'s temperature is ' + Math.abs(roundAns).toString() + '&#x2109 warmer than yesterday</p>');
+  var tempDiff = Math.floor(Number(todayTemp) - Number(prevTemp));
+  if (tempDiff > 0) {
+    $('#butt').html('<p>Today\'s temperature is ' + Math.abs(tempDiff).toString() + '&#x2109 warmer than yesterday</p>');
   } 
-  else if (roundAns < 0) {
-    $('#butt').html('<p>Today\'s temperature: ' + Math.abs(roundAns).toString() + '&#x2109 cooler than yesterday</p>');
+  else if (tempDiff < 0) {
+    $('#butt').html('<p>Today\'s temperature: ' + Math.abs(tempDiff).toString() + '&#x2109 cooler than yesterday</p>');
   }
   else {
     $('#butt').html('<p>Today\'s forecast is the same as yesterday\'s of ' + todayTemp + '&#x2109 </p>');
