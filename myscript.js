@@ -22,7 +22,7 @@ function getUserZipcode (event) {
 
 // Fcn: zipcodeData
 // Parameters: code
-// Definition: Takes the data from the API and writes the data to the html DOM
+// Definition: Takes the country, state, and city data from the API and writes the data to the html DOM
 function zipcodeData(code) {
   var country = code.location.country;
   $('#myLoca').html('<p>My location: ' + country +'</p>');
@@ -53,7 +53,8 @@ function getYesterdayWeather () {
 
 // Fcn: yesterdayData
 // Parameters: response
-// Definition: Takes the data from the API and writes the data to the html DOM
+// Definition: Takes the max, min, and mean farhenheit temperature data from the API and writes 
+//             the data to the html DOM
 function yesterdayData (response) {
     yesterHigh = response.history.dailysummary[0].maxtempi;
     yesterLow = response.history.dailysummary[0].mintempi;
@@ -76,7 +77,7 @@ function getTodayWeather (response) {
 
 // Fcn: todayData
 // Parameters: curr
-// Definition: Takes the data from the API and writes the data to the html DOM
+// Definition: Takes the current temperature from the API and writes the data to the html DOM
 function todayData (curr) {
   currTemp = curr.current_observation.temp_f;
   // debugger;
