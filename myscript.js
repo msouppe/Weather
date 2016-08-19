@@ -92,12 +92,12 @@ function todayData (curr) {
 function degreeDifference(prevTemp, todayTemp){
   var tempDiff = Math.floor(Number(todayTemp) - Number(prevTemp));
   if (tempDiff > 0) {
-    $('#butt').html('<p>Today\'s temperature is ' + Math.abs(tempDiff).toString() + '&#x2109 warmer than yesterday</p>');
+    $('#calculate').html('<p>Today\'s temperature is ' + Math.abs(tempDiff).toString() + '&#x2109 warmer than yesterday</p>');
   } 
   else if (tempDiff < 0) {
-    $('#butt').html('<p>Today\'s temperature: ' + Math.abs(tempDiff).toString() + '&#x2109 cooler than yesterday</p>');
+    $('#calculate').html('<p>Today\'s temperature: ' + Math.abs(tempDiff).toString() + '&#x2109 cooler than yesterday</p>');
   }
   else {
-    $('#butt').html('<p>Today\'s forecast is the same as yesterday\'s of ' + todayTemp + '&#x2109 </p>');
+    $('#calculate').html('<p>Today\'s forecast is the same as yesterday\'s of ' + todayTemp + '&#x2109 </p>');
   }
 }
