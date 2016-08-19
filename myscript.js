@@ -32,14 +32,14 @@ function getUserZipcode (event) {
 // Parameters: code
 // Definition: Takes the country, state, and city data from the API and writes the data to the html DOM
 function zipcodeData(code) {
-  var country = code.location.country;
-  $('#myLoca').html('<p>My location: ' + country +'</p>');
-  // debugger;
-  if ( country == "US") {
+  var etas = code.location.country;
+  $('#myLoca').html('<p>My location: ' + etas +'</p>');
+  console.log(etas);
+  if (etas == "US") {
     city = code.location.city;
     state_country = code.location.state;
   } 
-  else if (country != "US") {
+  else if (etas != "US") {
     city = code.location.city;
     state_country = code.location.country;
   }
@@ -54,7 +54,6 @@ function zipcodeData(code) {
 // Parameters: none
 // Definition: Get today's forecast from the Weather API
 function getYesterdayWeather () {
-  // yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/" + state_country + "/" + city + ".json";
   $.getJSON(yester_Weather, getTodayWeather);
 }
 
@@ -78,7 +77,6 @@ function yesterdayData (response) {
 // Definition: Get today's forecast from the Weather API
 function getTodayWeather (response) {
   yesterdayData(response);
-  // today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/" + state_country + "/" + city + ".json";
   $.getJSON(today_Weather, todayData);
 }
 
