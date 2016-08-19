@@ -1,17 +1,18 @@
 // var firstKey = "4a6c9c294860afdf";
 var otherKey = "86a17c63187fb2a5";
-var city = "Pleasanton";
+var city = "San_Francisco";
 var state_country = "CA";
-var zipcode = "95060";
+var zipcode = "95060";  // zipcode for Santa Cruz and temporarily is the default zipcode
 // var zipcode;
 // var yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/CA/San_Francisco.json";
 // var today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/CA/San_Francisco.json";
-var placement = placement = "http://api.wunderground.com/api/"+ otherKey +"/geolookup/q/" + zipcode + ".json";
+// var placement = "http://api.wunderground.com/api/"+ otherKey +"/geolookup/q/" + zipcode + ".json";
 var yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/" + state_country + "/" + city + ".json";
 var today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/" + state_country + "/" + city + ".json";
 // var placement, yester_Weather, today_Weather;
-var yesterHigh, yesterLow, currTemp, yesterMean, currZip, city, state_country;
+var yesterHigh, yesterLow, currTemp, yesterMean, currZip, city, state_country, placement;
 
+// Main program
 $(document).ready(function() {
   $("#driver").click(getUserZipcode);
 });
@@ -20,8 +21,9 @@ $(document).ready(function() {
 // Parameters: event
 // Definition: Get the zipcode from the Weather API 
 function getUserZipcode (event) {
-  zipcode = $("userZip").value;
-  // placement = "http://api.wunderground.com/api/"+ otherKey +"/geolookup/q/" + zipcode + ".json";
+  zipcode = document.getElementById("userZip").value;
+  console.log(zipcode);
+  placement = "http://api.wunderground.com/api/"+ otherKey +"/geolookup/q/" + zipcode + ".json";
   $.getJSON(placement, zipcodeData);
   getYesterdayWeather();
 }
@@ -32,7 +34,7 @@ function getUserZipcode (event) {
 function zipcodeData(code) {
   var country = code.location.country;
   $('#myLoca').html('<p>My location: ' + country +'</p>');
-  debugger;
+  // debugger;
   if ( country == "US") {
     city = code.location.city;
     state_country = code.location.state;
@@ -65,10 +67,10 @@ function yesterdayData (response) {
     yesterLow = response.history.dailysummary[0].mintempi;
     yesterMean = response.history.dailysummary[0].meantempi;
 
-    $('#prevDay').html('<p>Yesterday\'s Date: ' + response.history.date.pretty + '</p>');
-    $('#prevDay').append('<p>Yesterday\'s Low temperature: ' + yesterLow + '&#x2109 </p>');
-    $('#prevDay').append('<p>Yesterday\'s High temperature: ' + yesterHigh + '&#x2109 </p>');
-    $('#prevDay').append('<p>Yesterday\'s Mean temperature: ' + yesterMean + '&#x2109 </p>');
+    $('#prevDay').html('<p>Yesterday\'s forecast: </p>');
+    $('#prevDay').append('<p>   Low: ' + yesterLow + '&#x2109 </p>');
+    $('#prevDay').append('<p>   High: ' + yesterHigh + '&#x2109 </p>');
+    $('#prevDay').append('<p>   Mean: ' + yesterMean + '&#x2109 </p>');
 }
 
 // Fcn: getTodayWeather
