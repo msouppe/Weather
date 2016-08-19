@@ -1,9 +1,15 @@
 // var firstKey = "4a6c9c294860afdf";
 var otherKey = "86a17c63187fb2a5";
-var zipcode;
+var city = "Pleasanton";
+var state_country = "CA";
+var zipcode = "95060";
+// var zipcode;
 // var yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/CA/San_Francisco.json";
 // var today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/CA/San_Francisco.json";
-var placement, yester_Weather, today_Weather;
+var placement = placement = "http://api.wunderground.com/api/"+ otherKey +"/geolookup/q/" + zipcode + ".json";
+var yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/" + state_country + "/" + city + ".json";
+var today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/" + state_country + "/" + city + ".json";
+// var placement, yester_Weather, today_Weather;
 var yesterHigh, yesterLow, currTemp, yesterMean, currZip, city, state_country;
 
 $(document).ready(function() {
@@ -15,7 +21,7 @@ $(document).ready(function() {
 // Definition: Get the zipcode from the Weather API 
 function getUserZipcode (event) {
   zipcode = $("userZip").value;
-  placement = "http://api.wunderground.com/api/"+ otherKey +"/geolookup/q/" + zipcode + "94566.json";
+  // placement = "http://api.wunderground.com/api/"+ otherKey +"/geolookup/q/" + zipcode + ".json";
   $.getJSON(placement, zipcodeData);
   getYesterdayWeather();
 }
@@ -39,7 +45,6 @@ function zipcodeData(code) {
     city = "Seattle";
     state_country = "WA";
   }
-
   $('#myLoca').html('<p>My location: ' + city + ', ' + state_country +'</p>');
 }
 
@@ -47,7 +52,7 @@ function zipcodeData(code) {
 // Parameters: none
 // Definition: Get today's forecast from the Weather API
 function getYesterdayWeather () {
-  yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/" + state_country + "/" + city + ".json";
+  // yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/" + state_country + "/" + city + ".json";
   $.getJSON(yester_Weather, getTodayWeather);
 }
 
@@ -71,7 +76,7 @@ function yesterdayData (response) {
 // Definition: Get today's forecast from the Weather API
 function getTodayWeather (response) {
   yesterdayData(response);
-  today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/" + state_country + "/" + city + ".json";
+  // today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/" + state_country + "/" + city + ".json";
   $.getJSON(today_Weather, todayData);
 }
 

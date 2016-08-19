@@ -53,8 +53,9 @@ function onYesterdayWeaReturn (response) {
 function getUserZipcode () {
   zipcode = $("userZip").value;
   placement = "http://api.wunderground.com/api/"+ otherKey +"/geolookup/q/" + zipcode + "94107.json";
+  $.getJSON(placement, getZipcodeData);
 }
 
-function getZipcoeData() {
-
+function getZipcodeData() {
+  
 }
