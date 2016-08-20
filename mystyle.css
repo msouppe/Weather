@@ -1,0 +1,43 @@
+html { 
+  /*background: url(images/bg.jpg) no-repeat center center fixed; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #4d88ff;
+}
+
+body {
+	font-family: 'Slabo 27px', serif;
+}
+
+input {
+	background-color: #4d88ff;
+	border-top: none;
+    border-left: none;
+    border-right: none;
+    border-top-color: #4d88ff;
+    border-left-color: #4d88ff;
+    border-right-color: #4d88ff; 
+    border-bottom-width: thin;
+    font-family: 'Slabo 27px', serif;
+    font-size: xx-large;
+    width: 24%;
+    text-align: -webkit-center;
+    color: black;
+}
+
+.main {
+    display: block;
+    text-align: -webkit-center;
+    font-size: xx-large;
+    color: white;
+};
+
+#driver {
+	text-align: -webkit-center;
+	font-size: large;
+    color: black;
+    border: none;
+    background-color: #d6d6c2;
+}
