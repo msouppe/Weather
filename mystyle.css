@@ -8,7 +8,8 @@ html {
 }
 
 body {
-	font-family: 'Slabo 27px', serif;
+	font-family: 'Oswald', sans-serif !important;
+  background-color: #4d88ff !important;
 }
 
 input {
@@ -20,24 +21,29 @@ input {
     border-left-color: #4d88ff;
     border-right-color: #4d88ff; 
     border-bottom-width: thin;
-    font-family: 'Slabo 27px', serif;
-    font-size: xx-large;
-    width: 24%;
+    font-family: 'Oswald', sans-serif;
+    font-size: large;
+    width: 15%;
     text-align: -webkit-center;
     color: black;
 }
 
 .main {
-    display: block;
-    text-align: -webkit-center;
-    font-size: xx-large;
-    color: white;
+  display: block;
+  text-align: -webkit-center;
+  font-size: large;
+  color: white;
+  background-color: #4d88ff !important;
 };
 
 #driver {
 	text-align: -webkit-center;
 	font-size: large;
-    color: black;
-    border: none;
-    background-color: #d6d6c2;
+  color: black;
+  border: none;
+  background-color: #d6d6c2;
+}
+
+p {
+  text-align: -webkit-center;
 }

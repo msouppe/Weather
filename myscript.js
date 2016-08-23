@@ -47,7 +47,7 @@ function zipcodeData(code) {
     city = "Seattle";
     state_country = "WA";
   }
-  $('#myLoca').html('<p>My location: ' + city + ', ' + state_country +'</p>');
+  $('#myLoca').html('<p>' + city + ', ' + state_country +'</p>');
 }
 
 // Fcn: getYesterdayWeather
@@ -67,9 +67,9 @@ function yesterdayData (response) {
     yesterMean = response.history.dailysummary[0].meantempi;
 
     $('#prevDay').html('<p>Yesterday\'s forecast: </p>');
-    $('#prevDay').append('<p>   Low: ' + yesterLow + '&#x2109 </p>');
-    $('#prevDay').append('<p>   High: ' + yesterHigh + '&#x2109 </p>');
-    $('#prevDay').append('<p>   Mean: ' + yesterMean + '&#x2109 </p>');
+    $('#prevDay').append('<p>   Low: ' + yesterLow + '&#x2109      High: ' + yesterHigh + '&#x2109     Mean: ' + yesterMean + '&#x2109</p>');
+    // $('#prevDay').append('<p>   High: ' + yesterHigh + '&#x2109 </p>');
+    // $('#prevDay').append('<p>   Mean: ' + yesterMean + '&#x2109 </p>');
 }
 
 // Fcn: getTodayWeather
