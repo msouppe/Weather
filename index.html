@@ -6,46 +6,50 @@
     <title>Weather Application</title>
   	
   	<!-- Stylesheets -->
-    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto|Roboto+Condensed" rel="stylesheet>">
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">  
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+      
 
   	<!-- JQuery Files -->
   	<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
-      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Javascript Files -->
     <script type="text/javascript" src="myscript.js"></script>
 
   </head>
   <body>
-  	
-    
-    <!-- <div class="container"> -->
-      <p class="main">Zipcode: <input type="text" id="userZip"></input></p> <!-- add in cursor & only line & not box around input field -->
-      
-      <div id = "calculate"></div>
 
+    <div class="row">
+      <p class="main">Zipcode: <input type="text" id="userZip"></input></p> <!-- add in cursor & only line & not box around input field -->
+    </div>
+
+    <div class="row"> 
+      <div id = "calculate"></div> <!-- Print out the degree difference between today and yesterday's weather -->
+    </div>
+
+    <div class="row"> 
       <div class="col-sm-3"></div>
 
-      <div class="col-sm-3">
-        <div id = "myLoca"></div>
-      </div> <!-- class="col-" --> 
+      <div class="col-sm-3"> 
+        <div id = "myLoca"></div> <!-- Print out the location of the zipcode -->
+      </div> 
 
-      <div class="col-sm-3">
-        <div id = "yoyo"></div>
+      <div class="col-sm-3"> 
+        <div id = "currDay"></div> <!-- Print out the today's forecast -->
         <br>
-        <div id = "prevDay"></div>
-      </div> <!-- class="col-" --> 
+        <div id = "prevDay"></div> <!-- Print out yesterday's forecast -->
+      </div> 
+    </div>
 
-    <!-- </div> class="container" -->
-    
-    <br>
-    
-    <div>	<input type = "button" id = "driver" value = "Load Data" /></div>
+    <div class="row">
+      <input type = "button" id="driver" class="btnn" value = "Load Data" />
+    </div>
 
   </body>
 </html>

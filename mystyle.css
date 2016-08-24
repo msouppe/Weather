@@ -15,17 +15,19 @@ body {
 input {
 	background-color: #4d88ff;
 	border-top: none;
-    border-left: none;
-    border-right: none;
-    border-top-color: #4d88ff;
-    border-left-color: #4d88ff;
-    border-right-color: #4d88ff; 
-    border-bottom-width: thin;
-    font-family: 'Oswald', sans-serif;
-    font-size: large;
-    width: 15%;
-    text-align: -webkit-center;
-    color: black;
+  border-left: none;
+  border-right: none;
+  border-top-color: #4d88ff;
+  border-left-color: #4d88ff;
+  border-right-color: #4d88ff; 
+  border-bottom-width: thin;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: large !important;
+  width: 15%;
+  text-align: -webkit-center;
+  color: black;
+  margin-left: 43%;
+  margin-top: 35%;
 }
 
 .main {
@@ -34,11 +36,14 @@ input {
   font-size: large;
   color: white;
   background-color: #4d88ff !important;
-};
+  margin-top: 5%;
+}
 
-#driver {
-	text-align: -webkit-center;
-	font-size: large;
+
+.btnn {
+  margin-top: 10% !important;
+  margin-left: 43% !important;
+  font-size: large;
   color: black;
   border: none;
   background-color: #d6d6c2;
@@ -46,4 +51,5 @@ input {
 
 p {
   text-align: -webkit-center;
+  font-family: 'Oswald', sans-serif !important;
 }

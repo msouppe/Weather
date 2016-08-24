@@ -22,10 +22,14 @@ $(document).ready(function() {
 // Definition: Get the zipcode from the Weather API 
 function getUserZipcode (event) {
   zipcode = document.getElementById("userZip").value;
-  console.log(zipcode);
-  placement = "http://api.wunderground.com/api/"+ otherKey +"/geolookup/q/" + zipcode + ".json";
-  $.getJSON(placement, zipcodeData);
-  getYesterdayWeather();
+  if(zipcode == null || zipcode == "") {
+    alert("Enter a zipcode");
+  } else {
+    console.log(zipcode);
+    placement = "http://api.wunderground.com/api/"+ otherKey +"/geolookup/q/" + zipcode + ".json";
+    $.getJSON(placement, zipcodeData);
+    getYesterdayWeather();
+  }
 }
 
 // Fcn: zipcodeData
@@ -67,7 +71,7 @@ function yesterdayData (response) {
     yesterMean = response.history.dailysummary[0].meantempi;
 
     $('#prevDay').html('<p>Yesterday\'s forecast: </p>');
-    $('#prevDay').append('<p>   Low: ' + yesterLow + '&#x2109      High: ' + yesterHigh + '&#x2109     Mean: ' + yesterMean + '&#x2109</p>');
+    $('#prevDay').append('<p>   Low: ' + yesterLow + '&#x2109     <br> High: ' + yesterHigh + '&#x2109   <br>  Mean: ' + yesterMean + '&#x2109</p>');
     // $('#prevDay').append('<p>   High: ' + yesterHigh + '&#x2109 </p>');
     // $('#prevDay').append('<p>   Mean: ' + yesterMean + '&#x2109 </p>');
 }
@@ -85,8 +89,11 @@ function getTodayWeather (response) {
 // Definition: Takes the current temperature from the API and writes the data to the html DOM
 function todayData (curr) {
   currTemp = curr.current_observation.temp_f;
-  // debugger;
-  $('#yoyo').html('<p>Today\'s temperature: ' + currTemp + '&#x2109 </p>');
+  img = curr.current_observation.weather;
+  newStr = img.replace(/\s+/g, '');
+  console.log(newStr.toLowerCase());
+  debugger;
+  $('#currDay').html('<p>Today\'s temperature: ' + currTemp + '&#x2109 </p>');
   degreeDifference(yesterMean, currTemp);
 }
 
@@ -97,12 +104,12 @@ function todayData (curr) {
 function degreeDifference(prevTemp, todayTemp){
   var tempDiff = Math.floor(Number(todayTemp) - Number(prevTemp));
   if (tempDiff > 0) {
-    $('#calculate').html('<p>Today\'s temperature is ' + Math.abs(tempDiff).toString() + '&#x2109 warmer than yesterday</p>');
+    $('#calculate').html('<br><p>Today\'s temperature is ' + Math.abs(tempDiff).toString() + '&#x2109 warmer than yesterday</p>');
   } 
   else if (tempDiff < 0) {
-    $('#calculate').html('<p>Today\'s temperature: ' + Math.abs(tempDiff).toString() + '&#x2109 cooler than yesterday</p>');
+    $('#calculate').html('<br><p>Today\'s temperature: ' + Math.abs(tempDiff).toString() + '&#x2109 cooler than yesterday</p>');
   }
   else {
-    $('#calculate').html('<p>Today\'s forecast is the same as yesterday\'s of ' + todayTemp + '&#x2109 </p>');
+    $('#calculate').html('<br><p>Today\'s forecast is the same as yesterday\'s of ' + todayTemp + '&#x2109 </p>');
   }
 }
