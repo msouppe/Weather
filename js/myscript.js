@@ -3,13 +3,8 @@ var otherKey = "86a17c63187fb2a5";
 var city = "San_Francisco";
 var state_country = "CA";
 var zipcode = "95060";  // zipcode for Santa Cruz and temporarily is the default zipcode
-// var zipcode;
-// var yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/CA/San_Francisco.json";
-// var today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/CA/San_Francisco.json";
-// var placement = "http://api.wunderground.com/api/"+ otherKey +"/geolookup/q/" + zipcode + ".json";
 var yester_Weather = "http://api.wunderground.com/api/" + otherKey + "/yesterday/q/" + state_country + "/" + city + ".json";
 var today_Weather = "http://api.wunderground.com/api/" + otherKey + "/conditions/q/" + state_country + "/" + city + ".json";
-// var placement, yester_Weather, today_Weather;
 var yesterHigh, yesterLow, currTemp, yesterMean, currZip, city, state_country, placement;
 
 // Main program

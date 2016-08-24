@@ -35,9 +35,9 @@
   font-family: 'weathericons';
   font-style: normal;
   font-weight: normal;
-  line-height: 2;
+  line-height: 1.75;
   color: white;
-  font-size: 580%;
+  font-size: 844%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
