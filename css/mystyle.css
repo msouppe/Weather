@@ -57,6 +57,7 @@ input {
 .btnn {
   margin-top: 10% !important;
   margin-left: 43% !important;
+  width: 20%;
   font-size: large;
   color: black;
   border: none;

@@ -95,7 +95,7 @@ function todayData (curr) {
   console.log(iconImg);
   // debugger;
   $('#weatherIcon').html('<i class="wi wi-wu-' + iconImg + '"></i>');
-  $('#weatherIcon').append('<p>testting</p>');
+  // $('#weatherIcon').append('<p>testting</p>');
   $('#currDay').html('<p>Today\'s temperature: ' + currTemp + '&#x2109 </p>');
   degreeDifference(yesterMean, currTemp);
 }
