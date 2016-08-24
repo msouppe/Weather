@@ -12,15 +12,19 @@ body {
   background-color: #4d88ff !important;
 }
 
-@font-family {
+@font-face {
   font-family: 'wi';
-  src: url(font/weathericons-regular-webfont.woff2),
-       url(font/weathericons-regular-webfont.eot), 
-       url(font/weathericons-regular-webfont.svg),
-       url(font/weathericons-regular-webfont.ttf),
-       url(font/weathericons-regular-webfont.woff);
+  src: url(font/weathericons-regular-webfont.eot);
+  src: url(font/weathericons-regular-webfont.woff2) format('woff2'), 
+       url(font/weathericons-regular-webfont.woff) format('woff'),
+       url(font/weathericons-regular-webfont.ttf) format('truetype')
+       url(font/weathericons-regular-webfont.svg) format('svg');       
   font-size: normal;
   font-weight: normal;
+}
+
+.wi {
+  font-family: 'wi';
 }
 
 input {

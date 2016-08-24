@@ -93,7 +93,7 @@ function todayData (curr) {
   newStr = iconStr.replace(/\s+/g, '-');
   iconImg = newStr.toLowerCase();
   console.log(iconImg);
-  debugger;
+  // debugger;
   $('#weatherIcon').html('<i class="wi wi-' + iconImg + '></i>');
   $('#currDay').html('<p>Today\'s temperature: ' + currTemp + '&#x2109 </p>');
   degreeDifference(yesterMean, currTemp);

@@ -8,24 +8,28 @@ html {
 }
 
 body {
-	font-family: 'Oswald', sans-serif !important;
+  font-family: 'Oswald', sans-serif !important;
   background-color: #4d88ff !important;
 }
 
-@font-family {
+@font-face {
   font-family: 'wi';
-  src: url(font/weathericons-regular-webfont.woff2),
-       url(font/weathericons-regular-webfont.eot), 
-       url(font/weathericons-regular-webfont.svg),
-       url(font/weathericons-regular-webfont.ttf),
-       url(font/weathericons-regular-webfont.woff);
+  src: url(font/weathericons-regular-webfont.eot);
+  src: url(font/weathericons-regular-webfont.woff2) format('woff2'), 
+       url(font/weathericons-regular-webfont.woff) format('woff'),
+       url(font/weathericons-regular-webfont.ttf) format('truetype')
+       url(font/weathericons-regular-webfont.svg) format('svg');       
   font-size: normal;
   font-weight: normal;
 }
 
+.wi {
+  font-family: 'wi';
+}
+
 input {
-	background-color: #4d88ff;
-	border-top: none;
+  background-color: #4d88ff;
+  border-top: none;
   border-left: none;
   border-right: none;
   border-top-color: #4d88ff;
@@ -49,7 +53,6 @@ input {
   background-color: #4d88ff !important;
   margin-top: 5%;
 }
-
 
 .btnn {
   margin-top: 10% !important;
