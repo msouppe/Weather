@@ -90,11 +90,11 @@ function getTodayWeather (response) {
 function todayData (curr) {
   currTemp = curr.current_observation.temp_f;
   iconStr = curr.current_observation.weather;
-  newStr = iconStr.replace(/\s+/g, '-');
+  newStr = iconStr.replace(/\s+/g, '');
   iconImg = newStr.toLowerCase();
   console.log(iconImg);
   // debugger;
-  $('#weatherIcon').html('<i class="wi wi-' + iconImg + '></i>');
+  $('#weatherIcon').html('<i class="wi wi-wu-' + iconImg + '"></i>');
   $('#weatherIcon').append('<p>testting</p>');
   $('#currDay').html('<p>Today\'s temperature: ' + currTemp + '&#x2109 </p>');
   degreeDifference(yesterMean, currTemp);
