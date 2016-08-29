@@ -8,6 +8,7 @@
   	<!-- Stylesheets -->
     <!-- <link rel="stylesheet" type="text/css" href="weather-icons.less">   -->
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/weather-icons.css">  
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">  
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,11 +22,12 @@
   <body>
 
     <div class="row">
-      <p class="main">Zipcode: <input type="text" id="userZip"></input></p> <!-- add in cursor & only line & not box around input field -->
+      <p class="main">Zipcode: <input type="text" id="userZip">
+        </input><input type= "image" src="images/search_icon.png" id="driver" alt="Submit"  value=""/></p> <!-- add in cursor & only line & not box around input field -->
     </div>
 
     <div class="row"> 
-      <div id = "calculate"></div> <!-- Print out the degree difference between today and yesterday's weather -->
+      <div id="calculate"></div> <!-- Print out the degree difference between today and yesterday's weather -->
     </div>
 
     <div class="row"> 
@@ -34,8 +36,8 @@
       <div class="col-sm-3">
         <br> 
         <br>
-        <div id = "myLoca"></div> <!-- Print out the location of the zipcode -->
-        <div id = "weatherIcon"></div> <!-- Print out the weather icon -->
+        <div id="myLoca"></div> <!-- Print out the location of the zipcode -->
+        <div id="weatherIcon"></div> <!-- Print out the weather icon -->
       </div> 
 
       <div class="col-sm-3"> 
@@ -48,8 +50,11 @@
     </div>
 
     <div class="row">
-      <input type = "button" id="driver" class="btnn" value = "Load Data" />
+      
+
     </div>
+
+    <!-- id="driver" class="btnn" -->
 
   </body>
 </html>

@@ -8,24 +8,60 @@ html {
 }
 
 body {
-  font-family: 'Oswald', sans-serif !important;
+  font-family: font-family: 'Roboto Slab', serif !important;
   background-color: #4d88ff !important;
 }
 
-/*@font-face {
-  font-family: 'wi';
-  src: url(font/weathericons-regular-webfont.eot);
-  src: url(font/weathericons-regular-webfont.woff2) format('woff2'), 
-       url(font/weathericons-regular-webfont.woff) format('woff'),
-       url(font/weathericons-regular-webfont.ttf) format('truetype')
-       url(font/weathericons-regular-webfont.svg) format('svg');       
+@font-face {
+  font-family: 'numFont';
+  src: url(../font/Panton-LightCaps.otf) format("opentype");
   font-size: normal;
   font-weight: normal;
 }
 
-.wi {
-  font-family: 'wi';
-}*/
+.nf {
+  margin-left: 32%;
+  letter-spacing: 0.5px;
+  display: inline;
+  font-family: 'numFont' !important;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  color: white;
+  font-size: 150%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.alignment {
+  text-align: left;
+}
+
+em { 
+  letter-spacing: 0.5px;
+  display: inline;
+  font-family: 'numFont' !important;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  color: white;
+  font-size: 211%;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.yest em {
+  font-size: 435%;
+}
+
+em .high{
+  color: gray;
+}
+
+em .low {
+  color: blue;
+}
 
 input {
   background-color: #4d88ff;
@@ -36,13 +72,31 @@ input {
   border-left-color: #4d88ff;
   border-right-color: #4d88ff; 
   border-bottom-width: thin;
-  font-family: 'Oswald', sans-serif !important;
+  font-family: 'Roboto Slab', serif !important;
   font-size: large !important;
   width: 15%;
   text-align: -webkit-center;
   color: black;
-  margin-left: 43%;
+  /*margin-left: 43%;*/
   margin-top: 35%;
+}
+
+input#driver {
+  background:url(../images/search_icon.png);
+  background-repeat: no-repeat;
+  width:40px;
+  height:40px;
+  border: 0;
+}
+
+#driver {
+  color: white;
+  text-align: -webkit-center;
+  color: black;
+  /*margin-left: 43%;*/
+  width: 40px;
+  height: 40px;
+  /*margin-top: 35%;*/
 }
 
 .main {
@@ -54,7 +108,7 @@ input {
   margin-top: 5%;
 }
 
-.btnn {
+/*.btnn {
   margin-top: 5% !important;
   margin-left: 39% !important;
   width: 21%;
@@ -62,9 +116,9 @@ input {
   color: black;
   border: none;
   background-color: #d6d6c2;
-}
+}*/
 
 p {
   text-align: -webkit-center;
-  font-family: 'Oswald', sans-serif !important;
+  font-family: 'Roboto Slab', serif !important;
 }

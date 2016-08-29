@@ -46,7 +46,7 @@ function zipcodeData(code) {
     city = "Seattle";
     state_country = "WA";
   }
-  $('#myLoca').html('<p>' + city + ', ' + state_country +'</p>');
+  $('#myLoca').html('<p class="nf">' + city + ', ' + state_country +'</p>');
 }
 
 // Fcn: getYesterdayWeather
@@ -65,9 +65,10 @@ function yesterdayData (response) {
     yesterLow = response.history.dailysummary[0].mintempi;
     yesterMean = response.history.dailysummary[0].meantempi;
 
-    $('#prevDay').html('<p>Yesterday\'s forecast: </p>');
-    $('#prevDay').append('<p>   Low: ' + yesterLow + '&#x2109     <br> High: ' + yesterHigh + '&#x2109   <br>  Mean: ' + yesterMean + '&#x2109</p>');
-    // $('#prevDay').append('<p>   High: ' + yesterHigh + '&#x2109 </p>');
+    $('#prevDay').html('<p class="alignment">Yesterday\'s forecast: </p>');
+    $('#prevDay').append('<p class="yest alignment"><em class="high">' + yesterHigh + '&degF |</em> <em class="low">' + yesterLow + ' &degF</em> </p>');
+    // $('#prevDay').append('<p class="alignment">Low: ' + yesterLow + '&#x2109 High: ' + yesterHigh + '&#x2109 </p>');
+    // $('#prevDay').append('<p class="alignment">High: ' + yesterHigh + '&#x2109 </p>');
     // $('#prevDay').append('<p>   Mean: ' + yesterMean + '&#x2109 </p>');
 }
 
@@ -84,14 +85,13 @@ function getTodayWeather (response) {
 // Definition: Takes the current temperature from the API and writes the data to the html DOM
 function todayData (curr) {
   currTemp = curr.current_observation.temp_f;
-  iconStr = curr.current_observation.weather;
-  newStr = iconStr.replace(/\s+/g, '');
-  iconImg = newStr.toLowerCase();
-  console.log(iconImg);
-  // debugger;
-  $('#weatherIcon').html('<i class="wi wi-wu-' + iconImg + '"></i>');
+  iconStr = curr.current_observation.icon;
+  console.log(iconStr);
+  debugger;
+  $('#weatherIcon').html('<i class="wi wi-wu-' + iconStr + '"></i>');
   // $('#weatherIcon').append('<p>testting</p>');
-  $('#currDay').html('<p>Today\'s temperature: ' + currTemp + '&#x2109 </p>');
+  $('#currDay').html('<p class="alignment">Current temperature: </p>');
+  $('#currDay').append('<p class="yest alignment"><em>' + Math.floor(currTemp) + ' &degF</em></p>');
   degreeDifference(yesterMean, currTemp);
 }
 
@@ -102,12 +102,12 @@ function todayData (curr) {
 function degreeDifference(prevTemp, todayTemp){
   var tempDiff = Math.floor(Number(todayTemp) - Number(prevTemp));
   if (tempDiff > 0) {
-    $('#calculate').html('<br><p>Today\'s temperature is ' + Math.abs(tempDiff).toString() + '&#x2109 warmer than yesterday</p>');
+    $('#calculate').html('<br><p>Today\'s temperature: <em>' + Math.abs(tempDiff).toString() + '&#x2109</em> warmer than yesterday</p>');
   } 
   else if (tempDiff < 0) {
-    $('#calculate').html('<br><p>Today\'s temperature: ' + Math.abs(tempDiff).toString() + '&#x2109 cooler than yesterday</p>');
+    $('#calculate').html('<br><p>Today\'s temperature: <em>' + Math.abs(tempDiff).toString() + '&#x2109</em> cooler than yesterday</p>');
   }
   else {
-    $('#calculate').html('<br><p>Today\'s forecast is the same as yesterday\'s of ' + todayTemp + '&#x2109 </p>');
+    $('#calculate').html('<br><p>Today\'s forecast is the same as yesterday\'s of <em>' + todayTemp + '&#x2109</em> </p>');
   }
 }
