@@ -32,6 +32,7 @@ function getUserZipcode (event) {
 // Definition: Takes the country, state, and city data from the API and writes the data to the html DOM
 function zipcodeData(code) {
   var etas = code.location.country;
+  
   $('#myLoca').html('<p>My location: ' + etas +'</p>');
   console.log(etas);
   if (etas == "US") {
