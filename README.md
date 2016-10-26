@@ -6,7 +6,7 @@ Mobile first web-app that retrieves API weather data to display how much warmer 
 
 # Technologies Used
 
-Frontend: Bootstrap, Geolocation, JSON, HTML, CSS, Javascript, JQuery
+Frontend: Bootstrap, Geolocation, JSON, HTML, CSS, Javascript, JQuery <br>
 Others: Wunderground Weather API
 
 <p align="center">
